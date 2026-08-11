@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Dark Mode + Orange Palette */
+  --bg: #0d0d0d;
+  --ink: #f5f0eb;
+  --accent: #f97316;
+  --muted: #9ca3af;
+  --white: #0d0d0d;
+
+  /* Global Tailwind Dark Mode Mapping — deep charcoal/stone backgrounds */
+  --color-white: #111111;
+  --color-slate-50: #0d0d0d;
+  --color-slate-100: #181818;
+  --color-slate-200: #222222;
+  --color-slate-300: #333333;
+  --color-slate-400: #9ca3af;
+  --color-slate-500: #d1d5db;
+  --color-slate-600: #e5e7eb;
+  --color-slate-700: #f3f4f6;
+  --color-slate-800: #fafafa;
+  --color-slate-900: #ffffff;
+  --color-slate-950: #ffffff;
+
+  /* Redirect Blue & Indigo → Vibrant Orange */
+  --color-blue-400: #fb923c;
+  --color-blue-500: #f97316;
+  --color-blue-600: #ea580c;
+  --color-blue-700: #c2410c;
+  --color-indigo-400: #fb923c;
+  --color-indigo-500: #f97316;
+  --color-indigo-600: #ea580c;
+  --color-indigo-700: #c2410c;
+
+  /* Light utility tints — mapped to dark orange/brown for high contrast */
+  --color-indigo-50: #1f1007;
+  --color-violet-50: #1a0e06;
+  --color-emerald-50: #061f15;
+  --color-amber-50: #1c1404;
+  --color-rose-50: #2b0811;
+  --color-blue-50: #1f1007;
+  --color-blue-100: #2e1a0b;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+/* Force slate/gray utility text colors to white for the dark project theme */
+.text-slate-50,
+.text-slate-100,
+.text-slate-200,
+.text-slate-300,
+.text-slate-400,
+.text-slate-500,
+.text-slate-600,
+.text-slate-700,
+.text-slate-800,
+.text-slate-900,
+.text-slate-950,
+.text-gray-50,
+.text-gray-100,
+.text-gray-200,
+.text-gray-300,
+.text-gray-400,
+.text-gray-500,
+.text-gray-600,
+.text-gray-755, /* support custom variants */
+.text-gray-700,
+.text-gray-800,
+.text-gray-900,
+.text-stone-50,
+.text-stone-100,
+.text-stone-200,
+.text-stone-300,
+.text-stone-400,
+.text-stone-500,
+.text-stone-600,
+.text-stone-700,
+.text-stone-800,
+.text-stone-850,
+.text-stone-900,
+.text-stone-950,
+.text-black {
+  color: #ffffff !important;
+}
+
+/* Revert text colors back to dark in light mode */
+.theme-light .text-slate-900,
+.theme-light .text-slate-950,
+.theme-light .text-gray-900,
+.theme-light .text-stone-900,
+.theme-light .text-stone-950,
+.theme-light .text-stone-850,
+.theme-light .text-black,
+.theme-light .text-slate-50 {
+  color: #0c0c0c !important;
+}
+
+.theme-light .text-[#f5f0eb],
+.theme-light .text-stone-100,
+.theme-light .text-slate-100 {
+  color: #0c0c0c !important;
+}
+
+.theme-light .text-slate-600,
+.theme-light .text-slate-700,
+.theme-light .text-gray-600,
+.theme-light .text-gray-700,
+.theme-light .text-stone-600,
+.theme-light .text-stone-700 {
+  color: #4b5563 !important;
+}
+
+.theme-light .text-slate-400,
+.theme-light .text-slate-500,
+.theme-light .text-gray-400,
+.theme-light .text-gray-500,
+.theme-light .text-stone-400,
+.theme-light .text-stone-500 {
+  color: #6b7280 !important;
+}
+
+.theme-light .text-white {
+  color: #111111 !important;
+}
+
+
+/* Custom super-bold display classes mimicking the Bold Typography theme */
+.big-display-text {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  line-height: 0.85;
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+/* Force white text only inside the Focus Timer page */
+#focus_timer_view,
+#focus_timer_view * {
+  color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .big-display-text {
+    font-size: 2.75rem;
+  }
+}
+
+.advisor-pane {
+  background-color: var(--ink);
+  color: var(--white);
+  border-radius: 24px;
+}
